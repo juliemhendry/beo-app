@@ -19,7 +19,7 @@ export const SetupScreen = ({
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.logo}>beo</Text>
+      <Text style={styles.logo}>beò</Text>
 
       <Card style={styles.scoreCard}>
         <Text style={styles.scoreLabel}>Your BSMAS Score</Text>
@@ -41,7 +41,7 @@ export const SetupScreen = ({
       </Card>
 
       <Button
-        title="Start Using Beo"
+        title="Start Using beò"
         variant="primary"
         onPress={onComplete}
         style={styles.button}

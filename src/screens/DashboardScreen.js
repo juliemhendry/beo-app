@@ -60,7 +60,7 @@ export const DashboardScreen = ({
 
       <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.header}>
-          <Text style={styles.logo}>beo</Text>
+          <Text style={styles.logo}>beò</Text>
           <View style={styles.headerButtons}>
             <TouchableOpacity onPress={onOpenSettings} style={styles.headerButton}>
               <Text style={styles.headerButtonText}>Settings</Text>

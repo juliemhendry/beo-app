@@ -21,7 +21,7 @@ export const OnboardingScreen = ({
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>beo</Text>
+        <Text style={styles.logo}>beò</Text>
         <Text style={styles.stepText}>
           Question {currentQuestion + 1} of {TOTAL_QUESTIONS}
         </Text>

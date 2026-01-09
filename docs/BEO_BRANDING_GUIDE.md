@@ -1,18 +1,18 @@
 # Beò Unified Branding Guide
-## Using beo-branding.config.js with Claude Code
+## Using beò-branding.config.js with Claude Code
 
 ---
 
 ## Overview
 
 All app branding is centralized in one source of truth:
-- **beo-branding.config.js** — Core design tokens (colors, typography, spacing)
+- **beò-branding.config.js** — Core design tokens (colors, typography, spacing)
 - **config/theme.js** — React Native implementation
 - **docs/BEO_BRANDING_GUIDE.md** — This guide
 
 ### Updating Colors/Spacing
 
-Edit `beo-branding.config.js` only. All changes automatically flow to React Native app.
+Edit `beò-branding.config.js` only. All changes automatically flow to React Native app.
 
 ---
 
@@ -20,7 +20,7 @@ Edit `beo-branding.config.js` only. All changes automatically flow to React Nati
 
 ### Pattern 1: Generate a Screen Component
 ```bash
-claude "Build a [ScreenName] screen for the Beo app.
+claude "Build a [ScreenName] screen for the beò app.
 
 Reference: ~/beo-app/config/theme.js for colors and styles.
 
