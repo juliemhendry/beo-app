@@ -5,6 +5,7 @@ export const STORAGE_KEYS = {
   SESSION_START: '@beo_session_start',
   HOURLY_START: '@beo_hourly_start',
   HOURLY_USED: '@beo_hourly_used',
+  DAILY_CHECKIN: '@beo_daily_checkin_',
 };
 
 // App configuration constants

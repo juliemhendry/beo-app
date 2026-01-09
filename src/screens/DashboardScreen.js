@@ -27,6 +27,8 @@ export const DashboardScreen = ({
   onInterventionComplete,
   onInterventionSkip,
   onOpenSettings,
+  onOpenDailyCheckIn,
+  hasCheckedInToday,
   onReset,
 }) => {
   const [showResetConfirm, setShowResetConfirm] = useState(false);
@@ -72,6 +74,36 @@ export const DashboardScreen = ({
         <Card style={styles.timerCard}>
           <Text style={styles.timerLabel}>Current Session</Text>
           <Text style={styles.timerValue}>{formatTime(sessionSeconds)}</Text>
+        </Card>
+
+        {/* Daily Check-In Card */}
+        <Card style={styles.checkInCard}>
+          <View style={styles.checkInContent}>
+            <View>
+              <Text style={styles.checkInTitle}>Daily Check-In</Text>
+              <Text style={styles.checkInSubtitle}>
+                {hasCheckedInToday
+                  ? 'Completed for today'
+                  : 'How are you feeling?'}
+              </Text>
+            </View>
+            <TouchableOpacity
+              style={[
+                styles.checkInButton,
+                hasCheckedInToday && styles.checkInButtonCompleted,
+              ]}
+              onPress={onOpenDailyCheckIn}
+            >
+              <Text
+                style={[
+                  styles.checkInButtonText,
+                  hasCheckedInToday && styles.checkInButtonTextCompleted,
+                ]}
+              >
+                {hasCheckedInToday ? 'View' : 'Start'}
+              </Text>
+            </TouchableOpacity>
+          </View>
         </Card>
 
         <Card>
@@ -283,5 +315,42 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: theme.text,
+  },
+  checkInCard: {
+    backgroundColor: theme.primary + '15',
+    borderWidth: 1,
+    borderColor: theme.primary + '30',
+  },
+  checkInContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  checkInTitle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: theme.text,
+  },
+  checkInSubtitle: {
+    fontSize: 13,
+    color: theme.textSecondary,
+    marginTop: 2,
+  },
+  checkInButton: {
+    backgroundColor: theme.primary,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 12,
+  },
+  checkInButtonCompleted: {
+    backgroundColor: theme.cardAlt,
+  },
+  checkInButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
+    color: theme.text,
+  },
+  checkInButtonTextCompleted: {
+    color: theme.textSecondary,
   },
 });
