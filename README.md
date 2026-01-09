@@ -1,4 +1,4 @@
-# Beo
+# beò
 
 Evidence-based digital wellbeing app that interrupts screen time with real-world activities.
 

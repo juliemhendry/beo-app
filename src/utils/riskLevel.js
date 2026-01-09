@@ -14,7 +14,7 @@ export const getRiskLevel = (score) => {
     return {
       level: 'Low',
       color: theme.success,
-      description: 'Your social media use appears healthy. Beo will help you maintain balance.',
+      description: 'Your social media use appears healthy. beò will help you maintain balance.',
     };
   }
 
@@ -22,7 +22,7 @@ export const getRiskLevel = (score) => {
     return {
       level: 'Moderate',
       color: theme.warning,
-      description: 'You show some signs of problematic use. Beo can help you build better habits.',
+      description: 'You show some signs of problematic use. beò can help you build better habits.',
     };
   }
 

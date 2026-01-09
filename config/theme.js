@@ -1,10 +1,10 @@
 /**
  * Beò React Native Theme
- * Imports tokens from beo-branding.config.js
+ * Imports tokens from beò-branding.config.js
  * Single source of truth for app colors, typography, spacing
  */
 
-const brandConfig = require('../beo-branding.config');
+const brandConfig = require('../beò-branding.config');
 
 // App-specific theme (extends base branding)
 const theme = {

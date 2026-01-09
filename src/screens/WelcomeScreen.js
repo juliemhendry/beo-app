@@ -10,14 +10,14 @@ export const WelcomeScreen = ({ onContinue }) => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.logo}>beo</Text>
+        <Text style={styles.logo}>beò</Text>
         <Text style={styles.tagline}>mindful moments</Text>
       </View>
 
       <View style={styles.content}>
-        <Text style={styles.title}>Welcome to Beo</Text>
+        <Text style={styles.title}>Welcome to beò</Text>
         <Text style={styles.description}>
-          Beo helps you build healthier digital habits by encouraging mindful breaks during your screen time.
+          beò helps you build healthier digital habits by encouraging mindful breaks during your screen time.
         </Text>
 
         <View style={styles.featureList}>

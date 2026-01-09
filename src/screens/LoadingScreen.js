@@ -8,7 +8,7 @@ import { theme } from '../constants/theme';
 export const LoadingScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.logo}>beo</Text>
+      <Text style={styles.logo}>beò</Text>
       <Text style={styles.tagline}>mindful moments</Text>
     </View>
   );
