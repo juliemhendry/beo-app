@@ -1,0 +1,47 @@
+# Beò App Development Rules
+
+## Branding & Theme
+- ALL styling must import from: `import { theme, textStyles, componentStyles, spacing, borderRadius } from './config/theme';`
+- NEVER hardcode colors. Use theme tokens only.
+- Primary color: theme.sage (#4A5D4A)
+- Action color: theme.coral (#E85D4C) - CTA buttons ONLY
+- Background: theme.bg (#0D0D0F)
+- Card backgrounds: theme.card (#1A1A1F)
+- Text: theme.text (#FFFFFF)
+
+## Typography
+- Use textStyles.h1, textStyles.h2, textStyles.body, textStyles.button
+- NEVER set fontSize/fontWeight manually - use textStyles presets
+- Headlines: textStyles.h2 (28px, semibold)
+- Body text: textStyles.body (16px, regular)
+- Buttons: textStyles.button (16px, semibold)
+
+## Spacing
+- Use spacing constants: spacing.xs, spacing.sm, spacing.md, spacing.lg, spacing.xl
+- Default gutters: spacing.lg (24px)
+- Padding in cards: spacing.lg
+- Never hardcode px values like padding: 16
+
+## Voice & Tone
+- Direct and honest—not preachy
+- Empathetic—we understand the struggle
+- Evidence-based—cite research
+- Actionable—every message leads somewhere
+- NEVER use shaming language like "addiction" or "addicted"
+
+## File Structure
+- All new screens go in /src folder
+- All styles use theme.js
+- Reusable components in /src/components
+- Keep logic separate from styling
+
+## Before You Write Code
+1. Check config/theme.js for available colors and styles
+2. Import theme at the top of every component
+3. Use theme tokens EVERYWHERE
+4. Never create inline stylesheets with hardcoded values
+
+## Git Workflow
+- Create feature branches: git checkout -b feature/feature-name
+- Commit frequently with clear messages
+- Push to origin before asking for review
