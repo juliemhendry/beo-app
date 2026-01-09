@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 import { formatDate } from '../utils/formatters';
 
 /**

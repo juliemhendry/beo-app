@@ -4,7 +4,7 @@ import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
 
 // Constants
-import { theme } from './src/constants/theme';
+import { theme } from './config/theme';
 import { TOTAL_QUESTIONS } from './src/constants/questions';
 import { CONFIG } from './src/constants/storage';
 import { getRandomIntervention } from './src/constants/interventions';

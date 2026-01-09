@@ -1,4 +1,4 @@
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 import { CONFIG } from '../constants/storage';
 
 /**
