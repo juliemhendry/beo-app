@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 import { getRiskLevel } from '../utils/riskLevel';
 import { Card } from '../components/Card';
 import { Button } from '../components/Button';

@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 
 /**
  * Reusable button component with variants

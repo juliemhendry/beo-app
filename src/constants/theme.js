@@ -1,15 +1,11 @@
-// Theme colors for the app
-export const theme = {
-  bg: '#0D0D0F',
-  card: '#1A1A1F',
-  cardAlt: '#252530',
-  primary: '#6366F1',
-  primaryLight: '#818CF8',
-  success: '#10B981',
-  warning: '#F59E0B',
-  danger: '#EF4444',
-  text: '#FFFFFF',
-  textSecondary: '#9CA3AF',
-  textMuted: '#6B7280',
-  border: '#2D2D35',
-};
+/**
+ * DEPRECATED: This file is deprecated. Use config/theme.js instead.
+ * This file now re-exports from the centralized branding config.
+ *
+ * All new code should import from: ../../config/theme
+ */
+
+const { theme } = require('../../config/theme');
+
+// Re-export the theme for backward compatibility
+module.exports = { theme };

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 import { BSMAS_QUESTIONS, TOTAL_QUESTIONS, LIKERT_SCALE } from '../constants/questions';
 import { ProgressBar } from '../components/ProgressBar';
 import { Button } from '../components/Button';

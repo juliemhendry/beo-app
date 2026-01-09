@@ -9,7 +9,7 @@ import {
   KeyboardAvoidingView,
   Platform,
 } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 
 const LOCATIONS = ['Home', 'Work', 'Transit', 'Other'];
 const ACTIVITIES = ['Working', 'Socializing', 'Relaxing', 'Other'];

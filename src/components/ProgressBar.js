@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { theme } from '../constants/theme';
+import { theme } from '../../config/theme';
 
 /**
  * Reusable progress bar component
