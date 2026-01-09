@@ -15,6 +15,7 @@ import { useProfile } from './src/hooks/useProfile';
 import { useHistory } from './src/hooks/useHistory';
 import { useTimer } from './src/hooks/useTimer';
 import { useStorage } from './src/hooks/useStorage';
+import { useDailyCheckIn } from './src/hooks/useDailyCheckIn';
 
 // Screens
 import {
@@ -24,6 +25,7 @@ import {
   SetupScreen,
   SettingsScreen,
   DashboardScreen,
+  DailyCheckInScreen,
 } from './src/screens';
 
 /**
@@ -61,6 +63,12 @@ export default function App() {
   } = useHistory();
 
   const { clearAllData } = useStorage();
+
+  const {
+    hasCheckedInToday,
+    saveCheckIn,
+    clearAllCheckIns,
+  } = useDailyCheckIn();
 
   // Handle limit reached callback
   const handleLimitReached = useCallback(() => {
@@ -137,6 +145,7 @@ export default function App() {
   // Handle app reset
   const handleReset = async () => {
     await clearAllData();
+    await clearAllCheckIns();
     clearProfile();
     clearHistory();
     resetTimers();
@@ -146,6 +155,12 @@ export default function App() {
     setShowIntervention(false);
     setCurrentIntervention(null);
     setScreen('welcome');
+  };
+
+  // Handle daily check-in submission
+  const handleDailyCheckInSubmit = async (checkInData) => {
+    await saveCheckIn(checkInData);
+    setScreen('dashboard');
   };
 
   // Handle hourly limit update from settings
@@ -203,6 +218,16 @@ export default function App() {
       );
     }
 
+    // Daily check-in screen
+    if (screen === 'dailyCheckIn') {
+      return (
+        <DailyCheckInScreen
+          onSubmit={handleDailyCheckInSubmit}
+          onBack={() => setScreen('dashboard')}
+        />
+      );
+    }
+
     // Dashboard screen
     if (screen === 'dashboard') {
       return (
@@ -221,6 +246,8 @@ export default function App() {
           onInterventionComplete={() => handleInterventionComplete(true)}
           onInterventionSkip={() => handleInterventionComplete(false)}
           onOpenSettings={() => setScreen('settings')}
+          onOpenDailyCheckIn={() => setScreen('dailyCheckIn')}
+          hasCheckedInToday={hasCheckedInToday}
           onReset={handleReset}
         />
       );
