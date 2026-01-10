@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>beò | Reclaim Your Mind from Social Media</title>
+    <meta name="description" content="Evidence-based digital wellbeing app that helps you regain control through nature-based interventions and mindful breaks.">
+    
+    <!-- Fonts: Distinctive pairing -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Design Direction: Organic Editorial Minimalism
+         * - Nature-inspired with scientific precision
+         * - Editorial magazine feel (credibility + sophistication)
+         * - Organic curves meet brutalist typography
+         * - Muted earth tones with vivid green accent
+         */
+        
+        :root {
+            /* Color Palette: Earth + Science */
+            --earth-dark: #1a1612;
+            --earth-mid: #4a3f35;
+            --earth-light: #f5f1ed;
+            --nature-green: #2d5016;
+            --accent-vital: #4caf50;
+            --accent-warn: #d4af37;
+            
+            /* Typography */
+            --font-display: 'DM Serif Display', serif;
+            --font-body: 'IBM Plex Sans', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--earth-light);
+            color: var(--earth-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(45, 80, 22, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(76, 175, 80, 0.02) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(212, 175, 55, 0.01) 0%, transparent 50%);
+            animation: drift 45s infinite linear;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes drift {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            100% { transform: translate(-5%, -5%) rotate(5deg); }
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(245, 241, 237, 0.9);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--earth-mid);
+            padding: var(--space-sm) var(--space-md);
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--nature-green);
+            letter-spacing: -0.02em;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--earth-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--nature-green);
+        }
+        
+        .cta-header {
+            padding: 0.75rem 2rem;
+            background: var(--nature-green);
+            color: var(--earth-light);
+            border: none;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-header:hover {
+            background: var(--earth-dark);
+            transform: translateY(-1px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md) var(--space-lg);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-content h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: var(--space-md);
+            color: var(--earth-dark);
+            font-weight: 400;
+        }
+        
+        .hero-content .highlight {
+            color: var(--nature-green);
+            font-style: italic;
+        }
+        
+        .hero-content .subhead {
+            font-size: 1.35rem;
+            color: var(--earth-mid);
+            margin-bottom: var(--space-md);
+            font-weight: 300;
+            max-width: 90%;
+            line-height: 1.5;
+        }
+        
+        .credibility {
+            display: flex;
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--earth-mid);
+            font-weight: 500;
+        }
+        
+        .credibility span {
+            position: relative;
+            padding-left: var(--space-sm);
+        }
+        
+        .credibility span::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-vital);
+        }
+        
+        .cta-primary {
+            display: inline-block;
+            padding: 1.25rem 3rem;
+            background: var(--nature-green);
+            color: var(--earth-light);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--nature-green);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--earth-dark);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .cta-primary:hover::before {
+            left: 0;
+        }
+        
+        .cta-primary:hover {
+            border-color: var(--earth-dark);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+        }
+        
+        /* Problem Section */
+        .problem {
+            background: var(--earth-dark);
+            color: var(--earth-light);
+            padding: var(--space-xl) var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(
+                    90deg,
+                    transparent,
+                    transparent 50px,
+                    rgba(76, 175, 80, 0.02) 50px,
+                    rgba(76, 175, 80, 0.02) 51px
+                );
+            pointer-events: none;
+        }
+        
+        .problem-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+        
+        .problem-content h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+            font-weight: 400;
+        }
+        
+        .problem-content .evidence {
+            font-size: 1.1rem;
+            margin-bottom: var(--space-md);
+            opacity: 0.9;
+        }
+        
+        .problem-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            margin-top: var(--space-lg);
+        }
+        
+        .problem-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: var(--space-md);
+            border-left: 3px solid var(--accent-vital);
+            backdrop-filter: blur(8px);
+        }
+        
+        .problem-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-display);
+            color: var(--accent-vital);
+        }
+        
+        /* Solution Section */
+        .solution {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        .solution h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            text-align: center;
+            margin-bottom: var(--space-lg);
+            line-height: 1.2;
+            font-weight: 400;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .feature {
+            position: relative;
+            padding: var(--space-lg) var(--space-md);
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--earth-mid);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: var(--nature-green);
+            transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+        
+        .feature:hover::before {
+            width: 100%;
+        }
+        
+        .feature:hover {
+            border-color: var(--nature-green);
+            color: var(--earth-light);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: var(--space-md);
+            display: block;
+        }
+        
+        .feature h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: var(--space-sm);
+            font-weight: 400;
+        }
+        
+        .feature p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        
+        /* Authority Section */
+        .authority {
+            background: var(--nature-green);
+            color: var(--earth-light);
+            padding: var(--space-xl) var(--space-md);
+        }
+        
+        .authority-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .authority-content .quote {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            line-height: 1.4;
+            margin-bottom: var(--space-md);
+            font-style: italic;
+        }
+        
+        .authority-content .attribution {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: var(--space-md);
+        }
+        
+        .credentials {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+            margin-top: var(--space-lg);
+        }
+        
+        .credential-badge {
+            padding: var(--space-sm) var(--space-md);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 500;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: var(--space-md);
+            font-weight: 400;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            color: var(--earth-mid);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-secondary {
+            padding: 1.25rem 3rem;
+            background: transparent;
+            color: var(--earth-dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: 2px solid var(--earth-dark);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary:hover {
+            background: var(--earth-dark);
+            color: var(--earth-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--earth-dark);
+            color: var(--earth-light);
+            padding: var(--space-lg) var(--space-md);
+            text-align: center;
+        }
+        
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent-vital);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        footer a:hover {
+            opacity: 0.7;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                padding: var(--space-lg) var(--space-md);
+            }
+            
+            .problem-list {
+                grid-template-columns: 1fr;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .credibility {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .nav-links {
+                gap: var(--space-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">beò</div>
+            <div class="nav-links">
+                <a href="https://x.com/bhibeo" target="_blank">@bhibeo</a>
+                <a href="/cdn-cgi/l/email-protection#81e8efe7eec1e3e4eeafedede2" class="cta-header">Contact</a>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Your phone is <span class="highlight">hunting</span> your attention. Fight back.</h1>
+                
+                <p class="subhead">
+                    Evidence-based interventions that help you regain control of your attention through mindful breaks and nature connection.
+                </p>
+                
+                <div class="credibility">
+                    <span>Fortune 500 Experience</span>
+                    <span>Research-Backed</span>
+                    <span>Tech Leadership</span>
+                </div>
+                
+                <a href="#beta" class="cta-primary">Join Beta Waitlist</a>
+            </div>
+            
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=800&fit=crop" alt="Nature scene" class="hero-image">
+            </div>
+        </section>
+        
+        <section class="problem">
+            <div class="problem-content">
+                <h2>We Built the Tech. Then We Studied What It Does to Human Brains.</h2>
+                
+                <p class="evidence">
+                    Social media platforms spent billions engineering your attention. 
+                    They're not just addictive—they're systematically degrading human cognitive capabilities.
+                </p>
+                
+                <div class="problem-list">
+                    <div class="problem-item">
+                        <h3>Attention Hijacking</h3>
+                        <p>Infinite scroll and variable rewards aren't bugs. They're features designed to keep you scrolling.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>Cognitive Decline</h3>
+                        <p>Your attention span isn't broken. It's being systematically stolen by optimization algorithms.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>Displacement</h3>
+                        <p>Every hour on social media is an hour not spent in nature, with loved ones, or on meaningful work.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>Willpower Isn't Enough</h3>
+                        <p>You're not weak. You're human. Tech companies have multi-billion dollar teams working against you.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>Engineered Addiction</h3>
+                        <p>These platforms use the same psychological techniques as slot machines. They're designed to be irresistible.</p>
+                    </div>
+                    <div class="problem-item">
+                        <h3>Lost Time</h3>
+                        <p>The average person spends 2.5 hours daily on social media. That's 38 days per year of your life.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="solution">
+            <h2>beò: The Counter-Weapon</h2>
+            
+            <div class="features">
+                <div class="feature">
+                    <span class="feature-icon">🌿</span>
+                    <h3>Nature Integration</h3>
+                    <p>Mindful outdoor breaks that restore attention and reduce anxiety. Replace doom scrolling with genuine restoration.</p>
+                </div>
+                
+                <div class="feature">
+                    <span class="feature-icon">💰</span>
+                
+                <div class="feature">
+                    <span class="feature-icon">🔬</span>
+            </div>
+        </section>
+        
+        <section class="authority">
+            <div class="authority-content">
+                <blockquote class="quote">
+                    "We've led digital transformations for Fortune 500 companies. 
+                    Now we're using that expertise to help you reclaim what tech steals: 
+                    time, attention, cognitive capacity."
+                </blockquote>
+                
+                <p class="attribution">
+                    The beò Team
+                </p>
+                
+                <div class="credentials">
+                    <div class="credential-badge">Fortune 500 Experience</div>
+                    <div class="credential-badge">Research-Backed Solutions</div>
+                    <div class="credential-badge">Tech Leadership</div>
+                    <div class="credential-badge">Behavioral Psychology</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="final-cta" id="beta">
+            <h2>Launch: Spring 2026</h2>
+            
+            <p>
+                Be among the first to fight back. Beta access includes early adopter pricing 
+                and direct input into product development.
+            </p>
+            
+            <div class="cta-buttons">
+                <a href="/cdn-cgi/l/email-protection#147d7a727b5476717b3a7878772b6761767e717760297671d7a63456716075345577777167673446716561716760" class="cta-primary">
+                    Request Beta Access
+                </a>
+                <a href="https://x.com/bhibeo" class="cta-secondary" target="_blank">
+                    Follow Launch on X
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>
+            © 2026 beò. Launching Spring 2026.
+        </p>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.problem-item, .feature').forEach(el => {
+        
